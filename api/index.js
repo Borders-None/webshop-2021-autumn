@@ -120,6 +120,7 @@ app.get('/api/shoes', async (req, res) => {
       return {
         id: s.id,
         title: s.title,
+        brand: s.brand,
         price: s.price,
         categoryId: s.categoryId,
         imageUrl: s.images.length ? s.images[0] : null,
