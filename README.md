@@ -11,14 +11,14 @@ API endpoints:
    - Returns a list of shoes based on filter criteria
    - It is possible to pass a filter object in the body of the request that will be used to filter shoes
 
-``` js
+```json
 {
-   "maxPrice": 50, // The maximum price a shoe has to have
-   "minPrice": 40, // The minimum price of a shoe
-   "search": "Natural", // Search term, searches on title and brand properties
-   "pageSize": 10 // The number of shoes that the current page of results will contain
-   "pageNumber": 5, // The page index, numeration starts with 1
-   "categories": [2, 4], // The categories of the shoes that have to be included in teh result
+   "maxPrice": 50,        // The maximum price a shoe has to have
+   "minPrice": 40,        // The minimum price of a shoe
+   "search": "Natural",   // Search term, searches on title and brand properties
+   "pageSize": 10,         // The number of shoes that the current page of results will contain 
+   "pageNumber": 5,       // The page index, numeration starts with 1
+   "categories": [2, 4]   // The categories of the shoes that have to be included in the result
 
 }
 ```
@@ -34,6 +34,11 @@ API endpoints:
 
  - `POST /api/purchase`
    - Creates a purchase
-   - The body has to contain a `shoes` array of shoe ids to purchase
+   - The body has to contain a `shoes` array of shoe ids to purchase. For example:
+  ```json
+  {
+    "shoes": [1, 2, 3]
+  }
+  ```
   
 The files `shoes.js` and `categories.js` contain the website data. Feel free to explore the files to get a grip on what data is provided. For especially brave readers, you can even take a look on `index.js` and see how the REST API is implemented.

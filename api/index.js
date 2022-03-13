@@ -153,19 +153,20 @@ app.get('/api/categories', async (req, res) => {
   return res.status(200).send(categories);
 });
 
-app.use(function (req, res) {
-  res.send(404);
-});
-
 app.post('/api/purchase', async (req, res) => {
-  if (!req.body?.shoes.length) {
+  await new Promise((r) => setTimeout(r, 2000));
+
+  if (!req.body?.shoes?.length) {
     return res.status(400).send({
       message: 'No shoes were provided',
     });
   }
-  await new Promise((r) => setTimeout(r, 2000));
 
-  return res.status(201);
+  return res.sendStatus(201);
+});
+
+app.use(function (req, res) {
+  res.sendStatus(404);
 });
 
 app.listen(port, () => {
