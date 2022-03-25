@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;1,300&family=Open+Sans:ital,wght@0,300;1,300;1,700&family=Raleway:ital,wght@0,100;0,500;0,800;1,200;1,300;1,500&family=Rancho&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 7%;
+  position: fixed;
+  border-bottom: 1px solid whitesmoke;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: whitesmoke;
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: brown;
+  border-bottom: 0.1rem solid whitesmoke;
+  padding-bottom: 0.5rem;
+}
+
+.icons i {
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
+
+.icons i:hover {
+  color: brown;
+}
+
+#menu-btn {
+  display: none;
+}
+
+.search-form {
+  position: relative;
+  height: 60px;
+  width: 350px;
+}
+
+.search-form input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: whitesmoke;
+  font-size: 18px;
+  border-radius: 50px;
+  padding: 0 60px 0 20px;
+}
+
+.search-form .search-btn {
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  height: 60px;
+  width: 60px;
+  color: black;
+  background: #fff;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.search-form .cancel-btn {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  color: whitesmoke;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#hamburger {
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  right: 1.5rem;
+  width: 30px;
+  height: 21px;
+}
+
+#hamburger .bar {
+  width: 100%;
+  height: 5px;
+  margin-bottom: 3px;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: 0.3s all;
+}
+
+@media screen and (max-width: 600px) {
+  #hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+
+  nav {
+    position: absolute;
+    flex-direction: column;
+    top: 15vh;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(-45deg, #2e151b, #da7b93);
+    align-items: center;
+    transition: right 0.3s ease-in;
+  }
+  nav a {
+    margin-right: 0;
+  }
+}
+
+.meanu {
+  right: 0;
+  transition: right 0.3s ease-in;
+}
+
+.cross .bar:nth-child(2) {
+  opacity: 0;
+}
+.cross .bar:first-child {
+  transform: rotate(-45deg) translate(-5px, 7px);
+}
+
+.cross .bar:last-child {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: rgba(0, 0, 0, 0.7) url('image/first.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  background-position: center;
+  padding: 100px;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .text {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  max-height: 500px;
+}
+
+.content .text h2 {
+  color: #fff;
+  font-size: 50px;
+  line-height: 1.5em;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+.content .text h2:hover {
+  font-size: 60px;
+  box-shadow: 3px 3px 20px #e0943a;
+  padding: 10px;
+}
+
+.text a {
+  margin-top: 40px;
+  padding: 10px 20px;
+  color: black;
+  background: whitesmoke;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.shoes img {
+  max-width: 800px;
+  max-height: 500px;
+  transition: all 2s ease-in-out;
+}
+
+.shoes img:hover {
+  transform: rotate(360deg);
+}
