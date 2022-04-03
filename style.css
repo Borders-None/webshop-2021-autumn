@@ -208,3 +208,11 @@
 .shoes img:hover {
   transform: rotate(360deg);
 }
+
+.shoesrow{
+  display: grid;
+}
+
+#mainbox{
+  display: grid;
+}
