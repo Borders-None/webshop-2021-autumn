@@ -13,17 +13,16 @@
     <script src="index.js"></script>
   </head>
   <body>
-    <!--start of headre-->
     <header id="header">
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="#">About</a></li>
           <li class="dropbtn">
             <i class="fa fa-caret-down"></i> <a href="#">Categories</a>
             <div class="dropdown">
               <a href="#">Women Shoes</a>
-              <a href="#">Men Shoes</a>
+              <a href="#">Man Shoes</a>
               <a href="#">Kids Shoes</a>
             </div>
           </li>
@@ -49,24 +48,7 @@
         <div class="bar"></div>
       </a>
     </header>
-    <!--end of the header-->
 
-    <!--start of the main section-->
-    <section class="main">
-      <div class="content">
-        <div class="text">
-          <h2>we shoes</h2>
-          <a href="viewmore.html">VIEW MORE</a>
-        </div>
-
-        <div class="shoes">
-          <img src="image/shoe5.png" class="imgshoe" />
-        </div>
-      </div>
-    </section>
-    <!--end of the main section-->
-
-    <!--javascrip for the mobile responsive of the hamburger-->
     <script>
       const hamburger = document.getElementById('hamburger');
       hamburger.addEventListener('click', function (c) {
@@ -75,6 +57,5 @@
         hamburger.classList.toggle('cross');
       });
     </script>
-    <!--end of javascript for mobile responsive of the hamburger-->
   </body>
 </html>
