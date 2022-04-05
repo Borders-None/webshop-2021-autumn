@@ -285,6 +285,13 @@ ul li:hover::after {
   transform: rotate(360deg);
 }
 
+.shoesrow{
+  display: grid;
+}
+
+#mainbox{
+  display: grid;
+}
 @media screen and (max-width: 767px) {
   .content .text h2 {
     font-size: 3rem;
