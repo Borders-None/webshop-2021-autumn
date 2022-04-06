@@ -31,7 +31,7 @@ function createTitle(shoes) {
 
 function createPrice(shoes) {
   let priceamount = document.createElement('p');
-  priceamount.innerText = shoes.price;
+  priceamount.innerText = '$' + shoes.price;
   priceamount.classList.add('title');
   return priceamount;
 }
