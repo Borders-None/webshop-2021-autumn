@@ -41,6 +41,7 @@ function getElementId(shoes) {
   click.innerText = 'Add Cart';
   click.classList.add('buttn');
   click.setAttribute('id', 'shoes' + shoes.id);
+  click.onclick = addToCart;
   return click;
 }
 
@@ -77,5 +78,11 @@ function getShoes(data) {
     let row = createShoesRowElement(shoes);
     let box = document.getElementById('mainbox');
     box.appendChild(row);
+  }
+}
+
+function addToCart(data) {
+  for (let i = 0; i < data.result.length; i++) {
+    let = data.result[i];
   }
 }
