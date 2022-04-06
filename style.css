@@ -276,7 +276,7 @@ ul li:hover::after {
 }
 
 .shoes img {
-  max-width: 800px;
+  max-width: 650px;
   max-height: 500px;
   transition: all 2s ease-in-out;
 }
