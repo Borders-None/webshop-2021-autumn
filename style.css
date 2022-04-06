@@ -328,8 +328,8 @@ ul li:hover::after {
 }
 
 .iamge {
-  width: 250px;
-  height: 170px;
+  width: 270px;
+  height: 160px;
   padding-left: 30px;
   margin-top: 10px;
 }
@@ -344,7 +344,7 @@ ul li:hover::after {
 .buttn {
   padding: 10px 20px;
   margin-top: 15px;
-  background-color: red;
+  background-color: burlywood;
   border: none;
   color: #fafafa;
   cursor: pointer;
@@ -352,4 +352,34 @@ ul li:hover::after {
 }
 .buttn:hover {
   transform: scale(1.1);
+}
+
+.allChoicen {
+  width: 60%;
+  height: 580px;
+  background: #222;
+  position: absolute;
+  top: -1000px;
+  left: 20%;
+  transition: 0.5s;
+  overflow-y: auto;
+  margin: auto;
+}
+.allChoicen .shoesrow {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  padding: 5px;
+  border: 1px solid white;
+  position: relative;
+  margin: 5px auto;
+}
+
+.allChoicen .image {
+  width: 300px;
+  height: 100%;
+}
+
+.allChoicen .title {
+  padding: 35px;
 }
