@@ -323,6 +323,7 @@ ul li:hover::after {
   margin-bottom: 20px;
   color: black;
   background-color: #fff;
+  box-shadow: 20px 10px 22px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
