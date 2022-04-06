@@ -6,7 +6,7 @@ async function web() {
   const wait = document.getElementById('mainbox');
   const letterWait = document.createElement('h2');
   wait.appendChild(letterWait);
-  letterWait.innerText= "Loading...";
+  letterWait.innerText = 'Loading...';
 
   const response = await fetch('http://localhost:3000/api/shoes/');
   const data = await response.json();
@@ -15,40 +15,42 @@ async function web() {
   getShoes(data);
 }
 
-function createImgShoesElement(shoes){
+function createImgShoesElement(shoes) {
   let image = new Image();
   image.src = shoes.imageUrl;
-  image.style.width = '30px';
-  image.style.height = '30px';
+  image.classList.add('iamge');
   return image;
 }
 
-function createTitle(shoes){
+function createTitle(shoes) {
   let titleshoes = document.createElement('p');
+  titleshoes.classList.add('title');
   titleshoes.innerText = shoes.title;
   return titleshoes;
 }
 
-function createPrice(shoes){
+function createPrice(shoes) {
   let priceamount = document.createElement('p');
   priceamount.innerText = shoes.price;
+  priceamount.classList.add('title');
   return priceamount;
 }
 
-function getElementId(shoes){
+function getElementId(shoes) {
   let click = document.createElement('button');
-  click.innerText = 'dodaj';
-  click.setAttribute('id' , 'shoes' + shoes.id);
+  click.innerText = 'Add Cart';
+  click.classList.add('buttn');
+  click.setAttribute('id', 'shoes' + shoes.id);
   return click;
 }
 
-function createBrandElement(shoes){
+function createBrandElement(shoes) {
   let brand = document.createElement('p');
   brand.innerText = shoes.brand;
   return brand;
 }
 
-function createShoesRowElement(shoes){
+function createShoesRowElement(shoes) {
   let element = document.createElement('div');
   element.classList.add('shoesrow');
 
@@ -69,8 +71,8 @@ function createShoesRowElement(shoes){
   return element;
 }
 
-function getShoes(data){
-  for(let i=0; i < data.result.length ; i++){
+function getShoes(data) {
+  for (let i = 0; i < data.result.length; i++) {
     let shoes = data.result[i];
     let row = createShoesRowElement(shoes);
     let box = document.getElementById('mainbox');
