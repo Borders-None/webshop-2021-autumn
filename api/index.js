@@ -25,7 +25,7 @@ app.use(express.static('public'));
 // Set up CORS
 app.use(cors());
 
-app.get('/api/shoes', async (req, res) => {
+app.post('/api/shoes', async (req, res) => {
   try {
     console.log(req.body);
 
@@ -100,8 +100,8 @@ app.get('/api/shoes', async (req, res) => {
     const totalResults = result.length;
 
     if (req.body?.pageSize && req.body?.pageNumber) {
-      const startIndex = (req.body.pageNumber - 1) * req.body.pageSize;
-      const endIndex = startIndex + req.body.pageSize;
+      let startIndex = (req.body.pageNumber - 1) * req.body.pageSize;
+      let endIndex = startIndex + req.body.pageSize;
 
       if (startIndex > result.length - 1) {
         return res.status(400).send({
