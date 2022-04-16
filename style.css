@@ -254,11 +254,6 @@ ul li:hover::after {
   font-weight: bold;
   letter-spacing: 5px;
 }
-.content .text h2:hover {
-  font-size: 60px;
-  box-shadow: 3px 3px 20px #e0943a;
-  padding: 10px;
-}
 
 .text a {
   margin-top: 40px;
@@ -272,7 +267,7 @@ ul li:hover::after {
 }
 .text a:hover {
   transform: scale(1.5);
-  background-color: rgb(94, 221, 94);
+  background-color: burlywood;
 }
 
 .shoes img {
@@ -309,8 +304,10 @@ ul li:hover::after {
   position: absolute;
   top: 20%;
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-columns: 20% 20% 20%;
   justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
 }
 .shoesrow {
   width: 100%;
@@ -336,7 +333,46 @@ ul li:hover::after {
 .iamge:hover {
   transform: scale(1.1);
 }
-
+@media screen and (max-width: 300px) {
+  #mainbox {
+    display: grid;
+    grid-template-columns: 45% 45%;
+  }
+  .iamge {
+    width: 100px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 601px) {
+  #mainbox {
+    display: grid;
+    grid-template-columns: 45% 45%;
+  }
+  .iamge {
+    width: 200px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 900px) {
+  #mainbox {
+    display: grid;
+    grid-template-columns: 45% 45%;
+  }
+  .iamge {
+    width: 200px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #mainbox {
+    display: grid;
+    grid-template-columns: 45% 45%;
+  }
+  .iamge {
+    width: 200px;
+    height: 100px;
+  }
+}
 .title {
   margin-top: 20px;
 }
@@ -382,4 +418,46 @@ ul li:hover::after {
 
 .allChoicen .title {
   padding: 35px;
+}
+#mainbox .pagination {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #fff;
+  position: absolute;
+  padding: 15px;
+  top: 100%;
+  left: 50px;
+  border-radius: 50px;
+  text-align: center;
+  margin-left: 500px;
+}
+.btn {
+  background-color: burlywood;
+  color: #222;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 16px;
+}
+.btn:hover {
+  transform: scale(1.2);
+}
+#prev {
+  background-color: bisque;
+}
+.btn i {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #222;
+  font-size: 15px;
+}
+@media screen and (max-width: 601px) {
+  #mainbox .pagination {
+    margin: auto;
+    margin-left: 20px;
+  }
 }

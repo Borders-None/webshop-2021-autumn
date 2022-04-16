@@ -57,6 +57,28 @@
         hamburger.classList.toggle('cross');
       });
     </script>
-    <div id="mainbox"></div>
+    <div id="mainbox" class="mainbox">
+      <div class="pagination">
+        <button class="btn" id="prev" onclick="otherPage()">
+          <i class="fa fa-angle-left"></i>Prev
+        </button>
+        <button class="btn" id="next" onclick="nextPage()">
+          Next<i class="fa fa-angle-right"></i>
+        </button>
+      </div>
+      <!--<li class="btn prev">
+          <span><i class="fa fa-angle-left"></i>prev</span>
+        </li>
+        <li class="number active"><span>1</span></li>
+        <li class="number"><span>2</span></li>
+        <li class="dots"><span>....</span></li>
+        <li class="number"><span>4</span></li>
+        <li class="number"><span>5</span></li>
+        <li class="dots"><span>...</span></li>
+        <li class="number"><span>7</span></li>
+        <li class="btn next">
+          <span>Next <i class="fa fa-angle-right"></i></span>
+        </li>-->
+    </div>
   </body>
 </html>

@@ -2,13 +2,45 @@ document.addEventListener('DOMContentLoaded', async () => {
   await web();
 });
 
+let currentPag = 1;
+
+let shoesPerPage = 10;
+
+function nextPage() {
+  currentPag = currentPag + 1;
+  /*if (currentPag * 10 > 1) {
+    currentPag = currentPag - 1;
+  }*/
+
+  web();
+}
+function otherPage() {
+  currentPag = currentPag - 1;
+
+  web();
+}
+
+/*function nextPage() {
+  currentPag = currentPag + 1;
+  web();
+}*/
+
 async function web() {
   const wait = document.getElementById('mainbox');
   const letterWait = document.createElement('h2');
   wait.appendChild(letterWait);
   letterWait.innerText = 'Loading...';
 
-  const response = await fetch('http://localhost:3000/api/shoes/');
+  const response = await fetch('http://localhost:3000/api/shoes/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      pageSize: shoesPerPage,
+      pageNumber: currentPag,
+    }),
+  });
   const data = await response.json();
   wait.removeChild(letterWait);
   console.log(data);
