@@ -420,7 +420,7 @@ ul li:hover::after {
   padding: 35px;
 }
 #mainbox .pagination {
-  width: 300px;
+  width: 700px;
   height: 100px;
   display: flex;
   justify-content: space-evenly;
@@ -431,7 +431,7 @@ ul li:hover::after {
   left: 50px;
   border-radius: 50px;
   text-align: center;
-  margin-left: 500px;
+  margin-left: 300px;
 }
 .btn {
   background-color: burlywood;
@@ -454,6 +454,23 @@ ul li:hover::after {
   padding-left: 10px;
   color: #222;
   font-size: 15px;
+}
+.mainbox li {
+  list-style: none;
+  line-height: 45px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 6px;
+}
+.number {
+  height: 45px;
+  width: 45px;
+}
+.mainbox li:hover {
+  background-color: bisque;
 }
 @media screen and (max-width: 601px) {
   #mainbox .pagination {

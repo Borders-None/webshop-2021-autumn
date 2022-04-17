@@ -14,6 +14,12 @@ function nextPage() {
 
   web();
 }
+
+function pageNumbered() {
+  var pageNumberInput = document.getElementsByClassName('number').value;
+  currentPag = pageNumberInput;
+  web();
+}
 function otherPage() {
   currentPag = currentPag - 1;
 
