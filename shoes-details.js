@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  const urlParams = new URLSearchParams(window.location);
+  const urlParams = new URLSearchParams(window.location.search);
   const shoeId = urlParams.get('id');
 
   var wait = document.getElementById('shoebox');
