@@ -76,11 +76,20 @@ function createPrice(shoes) {
 
 function getElementId(shoes) {
   let click = document.createElement('button');
-  click.innerText = 'Add Cart';
+  click.innerText = 'Add To Cart';
   click.classList.add('buttn');
   click.setAttribute('id', 'shoes' + shoes.id);
-  click.onclick = addToCart;
+
   return click;
+}
+
+function getCliked(shoes) {
+  let clicked = document.createElement('button');
+  clicked.innerText = 'View More';
+  clicked.classList.add('buttn');
+  clicked.setAttribute('id', 'shoes' + shoes.id);
+  clicked.onclick = onClicked;
+  return clicked;
 }
 
 function createBrandElement(shoes) {
@@ -105,9 +114,17 @@ function createShoesRowElement(shoes) {
   let brand = createBrandElement(shoes);
   element.appendChild(brand);
 
+  let getMore = getCliked(shoes);
+  element.appendChild(getMore);
+
   let gettheid = getElementId(shoes);
   element.appendChild(gettheid);
   return element;
+}
+
+function onClicked(event) {
+  var clicked = event.target.id.substring(5);
+  window.open(`./shoes-details.html?id=${clicked}`, '_self');
 }
 
 function getShoes(data) {
@@ -116,11 +133,5 @@ function getShoes(data) {
     let row = createShoesRowElement(shoes);
     let box = document.getElementById('mainbox');
     box.appendChild(row);
-  }
-}
-
-function addToCart(data) {
-  for (let i = 0; i < data.result.length; i++) {
-    let = data.result[i];
   }
 }

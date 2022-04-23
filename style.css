@@ -333,6 +333,7 @@ ul li:hover::after {
 .iamge:hover {
   transform: scale(1.1);
 }
+
 @media screen and (max-width: 300px) {
   #mainbox {
     display: grid;
@@ -380,6 +381,7 @@ ul li:hover::after {
 .buttn {
   padding: 10px 20px;
   margin-top: 15px;
+  margin-left: 6px;
   background-color: burlywood;
   border: none;
   color: #fafafa;
@@ -418,6 +420,12 @@ ul li:hover::after {
 
 .allChoicen .title {
   padding: 35px;
+}
+
+.clicked {
+  width: 30px;
+  height: 30px;
+  background-color: #856245;
 }
 #mainbox .pagination {
   width: 700px;
