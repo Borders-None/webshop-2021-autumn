@@ -6,28 +6,23 @@ let currentPag = 1;
 
 let shoesPerPage = 10;
 
-function nextPage() {
-  currentPag = currentPag + 1;
-  /*if (currentPag * 10 > 1) {
-    currentPag = currentPag - 1;
-  }*/
+let search = '';
 
-  web();
-}
-
-function pageNumbered() {
-  var pageNumberInput = document.getElementsByClassName('number').value;
-  currentPag = pageNumberInput;
-  web();
-}
 function otherPage() {
   currentPag = currentPag - 1;
 
   web();
 }
 
-/*function nextPage() {
+function nextPage() {
   currentPag = currentPag + 1;
+
+  web();
+}
+
+/*function pageNumbered() {
+  var pageNumberInput = document.getElementsByClassName('number').value;
+  currentPag = pageNumberInput;
   web();
 }*/
 
@@ -45,6 +40,7 @@ async function web() {
     body: JSON.stringify({
       pageSize: shoesPerPage,
       pageNumber: currentPag,
+      searchShoe: search,
     }),
   });
   const data = await response.json();
@@ -120,6 +116,13 @@ function createShoesRowElement(shoes) {
   let gettheid = getElementId(shoes);
   element.appendChild(gettheid);
   return element;
+}
+
+function searchShoe() {
+  var searchShoe = document.getElementById('search');
+  var searchValue = searchShoe.value;
+  console.log(searchValue);
+  web();
 }
 
 function onClicked(event) {

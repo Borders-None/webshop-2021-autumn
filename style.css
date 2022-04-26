@@ -213,6 +213,38 @@ ul li:hover::after {
   transform: rotate(45deg) translate(-5px, -7px);
 }
 
+@media screen and (max-width: 1200px) {
+  #hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+  ul {
+    position: absolute;
+    flex-direction: column;
+    top: 15vh;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: whitesmoke;
+    align-items: center;
+    transition: right 0.3s ease-in;
+  }
+
+  ul li a {
+    color: black;
+  }
+  ul li {
+    margin-right: 0;
+  }
+  .icons i {
+    font-size: 30px;
+    margin-right: 50px;
+  }
+  #mainbox .pagination {
+    width: 80%;
+    margin: auto;
+  }
+}
 /*end of the mobile responsive of the header */
 
 .main {
@@ -241,7 +273,7 @@ ul li:hover::after {
   align-items: center;
   max-width: 600px;
   max-height: 500px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .text {
   text-align: center;
@@ -249,10 +281,14 @@ ul li:hover::after {
 
 .content .text h2 {
   color: #fff;
-  font-size: 6rem;
+  font-size: 5rem;
   line-height: 1.5em;
-  font-weight: bold;
   letter-spacing: 5px;
+}
+.text span {
+  font-size: 8rem;
+  font-family: sans-serif;
+  color: burlywood;
 }
 
 .text a {
@@ -272,7 +308,8 @@ ul li:hover::after {
 
 .shoes img {
   max-width: 650px;
-  max-height: 500px;
+  height: auto;
+  margin-top: 30px;
   transition: all 2s ease-in-out;
 }
 
@@ -282,22 +319,34 @@ ul li:hover::after {
 
 @media screen and (max-width: 767px) {
   .content .text h2 {
-    font-size: 3rem;
+    font-size: 30px;
   }
 
   .content {
     flex-direction: column-reverse;
   }
 
-  .content img {
-    width: 400px;
-    height: 400px;
-    margin-top: 30px;
-  }
-
   .text {
     text-align: center;
   }
+}
+
+.about {
+  width: 100%;
+  height: 300px;
+  display: column;
+  justify-content: center;
+  text-align: center;
+  background-color: whitesmoke;
+}
+.about h1 {
+  padding-top: 40px;
+  padding-bottom: 35px;
+  font-size: 50px;
+}
+
+.about p {
+  font-size: 30px;
 }
 
 #mainbox {
@@ -311,7 +360,7 @@ ul li:hover::after {
 }
 .shoesrow {
   width: 100%;
-  height: 400px;
+  height: auto;
   padding: 5px;
   display: inline;
   align-items: center;
@@ -325,10 +374,9 @@ ul li:hover::after {
 }
 
 .iamge {
-  width: 270px;
-  height: 160px;
-  padding-left: 30px;
-  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
 }
 .iamge:hover {
   transform: scale(1.1);
@@ -358,10 +406,6 @@ ul li:hover::after {
   #mainbox {
     display: grid;
     grid-template-columns: 45% 45%;
-  }
-  .iamge {
-    width: 200px;
-    height: 100px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -429,7 +473,7 @@ ul li:hover::after {
 }
 #mainbox .pagination {
   width: 700px;
-  height: 100px;
+  height: auto;
   display: flex;
   justify-content: space-evenly;
   background-color: #fff;
@@ -481,8 +525,61 @@ ul li:hover::after {
   background-color: bisque;
 }
 @media screen and (max-width: 601px) {
-  #mainbox .pagination {
-    margin: auto;
-    margin-left: 20px;
+  body {
+    display: block;
   }
+
+  #mainbox .pagination {
+    width: 80%;
+    margin: auto;
+  }
+  #shoesbox {
+    flex-direction: column;
+  }
+  #shoesbox img {
+    margin-top: 100px;
+    width: 50%;
+  }
+  #titel {
+    display: none;
+  }
+
+  .second {
+    text-align: center;
+  }
+}
+
+#shoesbox {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.picture {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+
+#titel {
+  display: inline;
+  align-items: center;
+  text-align: left;
+  width: 500px;
+  height: 300px;
+  margin-bottom: 20px;
+  color: black;
+  background-color: #fff;
+  border-bottom: 2px solid black;
+  border-radius: 10px;
+}
+.second {
+  padding-bottom: 20px;
+  margin-left: 10px;
+  text-align: left;
 }
