@@ -43,10 +43,43 @@ async function web() {
       searchShoe: search,
     }),
   });
+
+  const response1 = await fetch('http://localhost:3000/api/categories');
+  const categories = await response1.json();
+  console.log(categories);
+  var categorey = categories[1];
+  for (let i = 0; i < categorey.subCategories.length; i++) {
+    displayCategory(categories[categorey.subCategories[i]], 0);
+  }
+
+  function displayCategory(category, level) {
+    let string = '';
+    for (let i = 0; i < level; i++) {
+      string += '-';
+      showGategorie();
+    }
+
+    console.log(string + category.name);
+    for (let i = 0; i < category.subCategories.length; i++) {
+      let currentSubcategoryId = category.subCategories[i];
+      displayCategory(categories[currentSubcategoryId], level + 1);
+    }
+  }
+
+  const Response = await fetch('http://localhost:3000/api/shoes/');
+
   const data = await response.json();
   wait.removeChild(letterWait);
   console.log(data);
   getShoes(data);
+}
+
+function showGategorie(category) {
+  const gate = document.getElementById('dropdown');
+  const getGate = document.createElement('a');
+  gate.appendChild(getGate);
+  getGate.innerText =
+    '<i class="fa fa-caret-down"></i> <a href="#">Categories</a>';
 }
 
 function createImgShoesElement(shoes) {
