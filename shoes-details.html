@@ -10,15 +10,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="index.js"></script>
+    <script src="shoe-details.js"></script>
   </head>
   <body>
-    <header class="header">
-      <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Categories</a>
-        <a href="#">Contact</a>
+    <!--start of headre-->
+    <header id="header" style="background-color: burlywood">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li class="dropbtn">
+            <i class="fa fa-caret-down"></i> <a href="#">Categories</a>
+            <div class="dropdown">
+              <a href="#">Women Shoes</a>
+              <a href="#">Men Shoes</a>
+              <a href="#">Kids Shoes</a>
+            </div>
+          </li>
+          <li><a href="#">Contact</a></li>
+        </ul>
       </nav>
 
       <div class="icons">
@@ -31,9 +41,6 @@
         <div class="search-btn">
           <i class="fa fa-search" aria-hidden="true"></i>
         </div>
-        <div class="cancel-btn">
-          <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
       </div>
 
       <a href="#" id="hamburger">
@@ -42,6 +49,21 @@
         <div class="bar"></div>
       </a>
     </header>
-    <div id="mainbox"></div>
+    <!--end of the header-->
+    <div id="shoesbox">
+      <div class="shoebox" id="shoebox"></div>
+
+      <div id="titel"></div>
+    </div>
+    <!--javascrip for the mobile responsive of the hamburger-->
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      hamburger.addEventListener('click', function (c) {
+        const ul = document.querySelector('nav > ul');
+        ul.classList.toggle('meanu');
+        hamburger.classList.toggle('cross');
+      });
+    </script>
+    <!--end of javascript for mobile responsive of the hamburger-->
   </body>
 </html>
