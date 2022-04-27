@@ -32,6 +32,7 @@ async function web() {
   wait.appendChild(letterWait);
   letterWait.innerText = 'Loading...';
 
+<<<<<<< HEAD
   const response = await fetch('http://localhost:3000/api/shoes/', {
     method: 'POST',
     headers: {
@@ -68,6 +69,30 @@ async function web() {
 
   const Response = await fetch('http://localhost:3000/api/shoes/');
 
+=======
+  const response1 = await fetch('http://localhost:3000/api/categories') ;
+  const categories = await response1.json();
+  console.log(categories);
+  var categorey = categories[1];
+  for(let i = 0 ; i < categorey.subCategories.length ; i++){
+    displayCategory(categories[categorey.subCategories[i]],0);
+}
+
+function displayCategory(category, level) {
+  let string = "";
+  for (let i = 0; i < level; i++) {
+    string += "-";
+  }
+
+  console.log(string + category.name);
+  for (let i = 0; i < category.subCategories.length; i++) {
+    let currentSubcategoryId = category.subCategories[i];
+    displayCategory(categories[currentSubcategoryId], level + 1);
+  }
+}
+
+  const response = await fetch('http://localhost:3000/api/shoes/');
+>>>>>>> main
   const data = await response.json();
   wait.removeChild(letterWait);
   console.log(data);
@@ -171,3 +196,15 @@ function getShoes(data) {
     box.appendChild(row);
   }
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+function addToCart(data) {
+  for (let i = 0; i < data.result.length; i++) {
+    let = data.result[i];
+  }
+}
+>>>>>>> main
