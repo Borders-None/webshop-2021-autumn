@@ -6,26 +6,37 @@ let currentPag = 1;
 
 let shoesPerPage = 10;
 
-let search = '';
+// search value of the input
+function search() {
+  var searchInpu = document.getElementById('search');
+  var searchValue = searchInpu.value;
+  console.log(searchValue);
+  var shoeRows = document.getElementsByTagName('div');
+  for (let i = 0; i < shoeRows.length; i++) {
+    let shoeRow = shoeRows[i];
+    var brandElement = shoeRow.querySelector('h2');
+    console.log(brandElement);
 
-function otherPage() {
-  currentPag = currentPag - 1;
-
-  web();
+    var titleElement = shoeRow.querySelector('p');
+    console.log(titleElement);
+  }
 }
 
+// to dispaly every pag 10 item
 function nextPage() {
   currentPag = currentPag + 1;
 
   web();
 }
 
-/*function pageNumbered() {
-  var pageNumberInput = document.getElementsByClassName('number').value;
-  currentPag = pageNumberInput;
-  web();
-}*/
+// to back to previos page
+function prevPage() {
+  currentPag = currentPag - 1;
 
+  web();
+}
+
+// function to fetch data from server
 async function web() {
   const wait = document.getElementById('mainbox');
   const letterWait = document.createElement('h2');
@@ -40,10 +51,10 @@ async function web() {
     body: JSON.stringify({
       pageSize: shoesPerPage,
       pageNumber: currentPag,
-      searchShoe: search,
     }),
   });
 
+  // fetch data of the categoris
   const response1 = await fetch('http://localhost:3000/api/categories');
   const categories = await response1.json();
   console.log(categories);
@@ -94,6 +105,8 @@ function showGategorie() {
   getGate.innerText =
     '<i class="fa fa-caret-down"></i> <a href="#">Categories</a>';
 }
+
+// function to display image from arry
 function createImgShoesElement(shoes) {
   let image = new Image();
   image.src = shoes.imageUrl;
@@ -101,12 +114,16 @@ function createImgShoesElement(shoes) {
   return image;
 }
 
-function createTitle(shoes) {
+// function to display the title of shoes
+
+/*function createTitle(shoes) {
   let titleshoes = document.createElement('p');
   titleshoes.classList.add('title');
   titleshoes.innerText = shoes.title;
   return titleshoes;
-}
+}*/
+
+// function to display price of the shoes
 
 function createPrice(shoes) {
   let priceamount = document.createElement('p');
@@ -115,6 +132,7 @@ function createPrice(shoes) {
   return priceamount;
 }
 
+// function to display button to add to cart
 function getElementId(shoes) {
   let click = document.createElement('button');
   click.innerText = 'Add To Cart';
@@ -123,6 +141,8 @@ function getElementId(shoes) {
 
   return click;
 }
+
+// function to view the datails of the shoes
 
 function getCliked(shoes) {
   let clicked = document.createElement('button');
@@ -133,11 +153,14 @@ function getCliked(shoes) {
   return clicked;
 }
 
+// function to display brand of the shoes
 function createBrandElement(shoes) {
-  let brand = document.createElement('p');
+  let brand = document.createElement('h2');
   brand.innerText = shoes.brand;
   return brand;
 }
+
+// function to append the all childern
 
 function createShoesRowElement(shoes) {
   let element = document.createElement('div');
@@ -146,14 +169,14 @@ function createShoesRowElement(shoes) {
   let image = createImgShoesElement(shoes);
   element.appendChild(image);
 
-  let title = createTitle(shoes);
-  element.appendChild(title);
+  let brand = createBrandElement(shoes);
+  element.appendChild(brand);
+
+  /*let title = createTitle(shoes);
+  element.appendChild(title);*/
 
   let price = createPrice(shoes);
   element.appendChild(price);
-
-  let brand = createBrandElement(shoes);
-  element.appendChild(brand);
 
   let getMore = getCliked(shoes);
   element.appendChild(getMore);
@@ -163,18 +186,13 @@ function createShoesRowElement(shoes) {
   return element;
 }
 
-function searchShoe() {
-  var searchShoe = document.getElementById('search');
-  var searchValue = searchShoe.value;
-  console.log(searchValue);
-  web();
-}
-
+// function to link to shoe details once we click on the view more button
 function onClicked(event) {
   var clicked = event.target.id.substring(5);
   window.open(`./shoes-details.html?id=${clicked}`, '_self');
 }
 
+// loop of all the shoes
 function getShoes(data) {
   for (let i = 0; i < data.result.length; i++) {
     let shoes = data.result[i];
@@ -182,4 +200,5 @@ function getShoes(data) {
     let box = document.getElementById('mainbox');
     box.appendChild(row);
   }
+  search();
 }

@@ -247,6 +247,7 @@ ul li:hover::after {
 }
 /*end of the mobile responsive of the header */
 
+/* start of the main section */
 .main {
   width: 100%;
   min-height: 100vh;
@@ -316,7 +317,7 @@ ul li:hover::after {
 .shoes img:hover {
   transform: rotate(360deg);
 }
-
+/* mobile responsiv of the main section*/
 @media screen and (max-width: 767px) {
   .content .text h2 {
     font-size: 30px;
@@ -330,6 +331,8 @@ ul li:hover::after {
     text-align: center;
   }
 }
+
+/* end of mobile responsive of main setion */
 
 .about {
   width: 100%;
@@ -349,11 +352,12 @@ ul li:hover::after {
   font-size: 30px;
 }
 
+/* start the main div of shoes */
 #mainbox {
   position: absolute;
   top: 20%;
   display: grid;
-  grid-template-columns: 20% 20% 20%;
+  grid-template-columns: 20% 20% 20% 20%;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
@@ -374,14 +378,14 @@ ul li:hover::after {
 }
 
 .iamge {
-  width: 100%;
+  width: 80%;
   max-width: 400px;
   height: auto;
 }
 .iamge:hover {
   transform: scale(1.1);
 }
-
+/* mobile responsive of shoes div */
 @media screen and (max-width: 300px) {
   #mainbox {
     display: grid;
