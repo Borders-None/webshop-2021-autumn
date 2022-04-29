@@ -21,13 +21,12 @@
           <li class="dropbtn">
             <i class="fa fa-caret-down"></i> <a href="#">Categories</a>
             <div class="dropdown">
-              <<<<<<< HEAD
               <a href="#" id="dropdown">Women Shoes</a>
-              =======
+
               <a onclick="displayCategory(category, level)" href="#"
                 >Women Shoes</a
               >
-              >>>>>>> main
+
               <a href="#">Man Shoes</a>
               <a href="#">Kids Shoes</a>
             </div>
@@ -42,9 +41,14 @@
       </div>
 
       <div class="search-form">
-        <input type="text" id="search" placeholder="search here..." />
+        <input
+          type="text"
+          id="search"
+          data-search
+          placeholder="search here..."
+        />
         <div class="search-btn">
-          <i class="fa fa-search" onclick="searchShoe()" aria-hidden="true"></i>
+          <i class="fa fa-search" onclick="search()" aria-hidden="true"></i>
         </div>
       </div>
 
@@ -55,6 +59,18 @@
       </a>
     </header>
 
+    <div id="mainbox" class="mainbox">
+      <div class="pagination">
+        <button class="btn" id="prev" onclick="prevPage()">
+          <i class="fa fa-angle-left"></i>Prev
+        </button>
+
+        <button class="btn" id="next" onclick="nextPage()">
+          Next<i class="fa fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+
     <script>
       const hamburger = document.getElementById('hamburger');
       hamburger.addEventListener('click', function (c) {
@@ -63,21 +79,5 @@
         hamburger.classList.toggle('cross');
       });
     </script>
-    <div id="mainbox" class="mainbox">
-      <div class="pagination">
-        <button class="btn" id="prev" onclick="otherPage()">
-          <i class="fa fa-angle-left"></i>Prev
-        </button>
-        <!--<li class="number" onclick="pageNumbered()"><span>1</span></li>
-        <li class="number"><span>2</span></li>
-        <li class="number"><span>3</span></li>
-        <li class="number"><span>4</span></li>
-        <li class="number"><span>5</span></li>
-        <li class="number"><span>6</span></li>-->
-        <button class="btn" id="next" onclick="nextPage()">
-          Next<i class="fa fa-angle-right"></i>
-        </button>
-      </div>
-    </div>
   </body>
 </html>
