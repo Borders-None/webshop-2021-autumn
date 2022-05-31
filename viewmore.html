@@ -22,11 +22,7 @@
             <i class="fa fa-caret-down"></i> <a href="#">Categories</a>
             <div class="dropdown">
               <a href="#" id="dropdown">Women Shoes</a>
-
-              <a onclick="displayCategory(category, level)" href="#"
-                >Women Shoes</a
-              >
-
+              <a href="#">Women Shoes</a>
               <a href="#">Man Shoes</a>
               <a href="#">Kids Shoes</a>
             </div>
@@ -48,7 +44,11 @@
           placeholder="search here..."
         />
         <div class="search-btn">
-          <i class="fa fa-search" onclick="search()" aria-hidden="true"></i>
+          <i
+            class="fa fa-search"
+            onclick="searchValue()"
+            aria-hidden="true"
+          ></i>
         </div>
       </div>
 
@@ -60,7 +60,7 @@
     </header>
 
     <div id="mainbox" class="mainbox">
-      <div class="pagination">
+      <div class="pagination" id="pagination">
         <button class="btn" id="prev" onclick="prevPage()">
           <i class="fa fa-angle-left"></i>Prev
         </button>
