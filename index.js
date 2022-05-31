@@ -3,24 +3,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 let currentPag = 1;
-
-let shoesPerPage = 10;
-
-// search value of the input
-function search() {
-  var searchInpu = document.getElementById('search');
-  var searchValue = searchInpu.value;
-  console.log(searchValue);
-  var shoeRows = document.getElementsByTagName('div');
-  for (let i = 0; i < shoeRows.length; i++) {
-    let shoeRow = shoeRows[i];
-    var brandElement = shoeRow.querySelector('h2');
-    console.log(brandElement);
-
-    var titleElement = shoeRow.querySelector('p');
-    console.log(titleElement);
-  }
-}
+let shoesPerPage = 12;
+let Allcategories = [];
+let search = '';
 
 // to dispaly every pag 10 item
 function nextPage() {
@@ -36,10 +21,16 @@ function prevPage() {
   web();
 }
 
+// search by category
+
+function searchValue() {
+  search = 'women';
+}
 // function to fetch data from server
 async function web() {
   const wait = document.getElementById('mainbox');
   const letterWait = document.createElement('h2');
+  wait.classList.add('loading');
   wait.appendChild(letterWait);
   letterWait.innerText = 'Loading...';
 
@@ -51,6 +42,8 @@ async function web() {
     body: JSON.stringify({
       pageSize: shoesPerPage,
       pageNumber: currentPag,
+      categories: Allcategories,
+      search: search,
     }),
   });
 
@@ -75,35 +68,20 @@ async function web() {
       let currentSubcategoryId = category.subCategories[i];
       displayCategory(categories[currentSubcategoryId], level + 1);
     }
-  }
 
-  function displayCategory(category, level) {
-    let string = '';
-    for (let i = 0; i < level; i++) {
-      string += '-';
-    }
-
-    console.log(string + category.name);
-    for (let i = 0; i < category.subCategories.length; i++) {
-      let currentSubcategoryId = category.subCategories[i];
-      displayCategory(categories[currentSubcategoryId], level + 1);
+    function showGategorie() {
+      const gate = document.getElementById('dropdown');
+      const getGate = document.createElement('a');
+      getGate.id = categorey.name;
+      gate.appendChild(getGate);
+      getGate.innerText = category.name;
     }
   }
-
-  const Response = await fetch('http://localhost:3000/api/shoes/');
 
   const data = await response.json();
   wait.removeChild(letterWait);
   console.log(data);
   getShoes(data);
-}
-
-function showGategorie() {
-  const gate = document.getElementById('dropdown');
-  const getGate = document.createElement('a');
-  gate.appendChild(getGate);
-  getGate.innerText =
-    '<i class="fa fa-caret-down"></i> <a href="#">Categories</a>';
 }
 
 // function to display image from arry
@@ -113,17 +91,6 @@ function createImgShoesElement(shoes) {
   image.classList.add('iamge');
   return image;
 }
-
-// function to display the title of shoes
-
-/*function createTitle(shoes) {
-  let titleshoes = document.createElement('p');
-  titleshoes.classList.add('title');
-  titleshoes.innerText = shoes.title;
-  return titleshoes;
-}*/
-
-// function to display price of the shoes
 
 function createPrice(shoes) {
   let priceamount = document.createElement('p');
@@ -200,5 +167,12 @@ function getShoes(data) {
     let box = document.getElementById('mainbox');
     box.appendChild(row);
   }
-  search();
 }
+
+// visibliti of the pagination
+
+function hiddeShow() {
+  document.getElementById('pagination').style.visibility = 'visible';
+  document.getElementById('slider-wrapper').style.visibility = 'visible';
+}
+setTimeout('hiddeShow()', 4000);
