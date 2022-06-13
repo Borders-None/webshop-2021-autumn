@@ -139,4 +139,4 @@ async function showDetails() {
 function hiddeShow() {
   document.getElementById('slider-wrapper').style.visibility = 'visible';
 }
-setTimeout('hiddeShow()', 3000);
+setTimeout('hiddeShow()', 2000);
