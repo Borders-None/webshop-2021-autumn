@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shoes 4U</title>
+    <title>cart</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="index.js"></script>
+    <script src="cart.js"></script>
   </head>
   <body>
     <header id="header" style="background-color: burlywood">
@@ -32,7 +32,8 @@
       </nav>
 
       <div class="icons">
-        <i class="fa fa-shopping-cart" id="cart-btn"  aria-hidden="true"><a href="cart.html"  onclick="getCartItems()">cart</a></i>
+        <i class="fa fa-shopping-cart" id="cart-btn" aria-hidden="true"></i>
+        <i class="fa fa-bars" id="menu-btn" aria-hidden="true"></i>
       </div>
 
       <div class="search-form">
@@ -58,16 +59,12 @@
       </a>
     </header>
 
-    <div id="mainbox" class="mainbox">
-      <div class="pagination" id="pagination">
-        <button class="btn" id="prev" onclick="prevPage()">
-          <i class="fa fa-angle-left"></i>Prev
-        </button>
-
-        <button class="btn" id="next" onclick="nextPage()">
-          Next<i class="fa fa-angle-right"></i>
-        </button>
-      </div>
+    <div id="cartbox">
+      <div id="cart-"></div>
+    </div>
+    <div id="cartbox1">
+       <label id="total" for=""> </label>
+       <button onclick="itsDone()">Purchase</button>
     </div>
 
     <script>

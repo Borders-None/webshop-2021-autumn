@@ -613,3 +613,28 @@ ul li:hover::after {
   opacity: 1;
   transform: scale(1.1);
 }
+
+#cartbox {
+  display: grid;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 20%;
+}
+
+#cart- {
+  display: grid;
+}
+
+#cartbox1 {
+  display: flex;
+}
+
+.frow{
+  display: grid;
+}
+
+.brnshoe{
+  display: flex;
+  flex-direction: row;
+}
