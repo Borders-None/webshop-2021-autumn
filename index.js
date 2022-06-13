@@ -21,10 +21,35 @@ function prevPage() {
   web();
 }
 
-// search by category
+// shoes per page
 
-function searchValue() {
-  search = 'women';
+function shoesPage() {
+  shoesPerPage = 12;
+  web();
+}
+
+function shoes() {
+  pageNumberFromInput = input.value;
+  currentPag = pageNumberFromInput;
+
+  web();
+}
+
+// search by value
+
+function filter() {
+  var searchInput = document.getElementById('search');
+  var filterAll = searchInput.value;
+  var shoes = document.querySelectorAll('.shoesrow');
+
+  shoes.forEach((shoe) => {
+    let text = shoe.textContent;
+    if (text.toUpperCase().includes(filterAll.toUpperCase())) {
+      shoe.style.display = '';
+    } else {
+      shoe.style.display = 'none';
+    }
+  });
 }
 // function to fetch data from server
 async function web() {
@@ -116,9 +141,10 @@ function getElementId(shoes) {
     click.setAttribute('disabled' , 'disabled');
     getCartItems();
   });
+  click.setAttribute('id', 'shoes');
+
   return click;
 }
-
 // function to view the datails of the shoes
 
 function getCliked(shoes) {
@@ -126,12 +152,15 @@ function getCliked(shoes) {
   clicked.innerText = 'View More';
   clicked.classList.add('buttn');
   clicked.setAttribute('id', 'shoes' + shoes.id);
+
+  clicked.onclick = onClicked;
   return clicked;
 }
 
 // function to display brand of the shoes
 function createBrandElement(shoes) {
   let brand = document.createElement('h2');
+  brand.classList.add('brands');
   brand.innerText = shoes.brand;
   return brand;
 }
@@ -177,13 +206,14 @@ function getShoes(data) {
     box.appendChild(row);
   }
 }
-
 // visibliti of the pagination
 
-function hiddeShow() {
+function hiddeAndShow() {
   document.getElementById('pagination').style.visibility = 'visible';
+
   document.getElementById('slider-wrapper').style.visibility = 'visible';
 }
 setTimeout('hiddeShow()', 4000);
 
 // add to cart 
+setTimeout('hiddeAndShow()', 4000);
