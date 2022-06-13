@@ -106,6 +106,7 @@ async function web() {
   const data = await response.json();
   wait.removeChild(letterWait);
   console.log(data);
+  products=data;
   getShoes(data);
 }
 
@@ -125,10 +126,21 @@ function createPrice(shoes) {
 }
 
 // function to display button to add to cart
+let cart = [];
 function getElementId(shoes) {
   let click = document.createElement('button');
   click.innerText = 'Add To Cart';
   click.classList.add('buttn');
+  click.setAttribute('id', 'shoes' + shoes.id);
+  click.addEventListener('click' , function(){
+    cart.push(shoes.id);
+    localStorage.setItem('userCart' , JSON.stringify(cart));
+    let items = JSON.parse(localStorage.getItem('userCart'));
+    let num = document.getElementById('cart-btn');
+    num.innerText = items.length;
+    click.setAttribute('disabled' , 'disabled');
+    getCartItems();
+  });
   click.setAttribute('id', 'shoes');
 
   return click;
@@ -139,6 +151,7 @@ function getCliked(shoes) {
   let clicked = document.createElement('button');
   clicked.innerText = 'View More';
   clicked.classList.add('buttn');
+  clicked.setAttribute('id', 'shoes' + shoes.id);
 
   clicked.onclick = onClicked;
   return clicked;
@@ -200,4 +213,7 @@ function hiddeAndShow() {
 
   document.getElementById('slider-wrapper').style.visibility = 'visible';
 }
+setTimeout('hiddeShow()', 4000);
+
+// add to cart 
 setTimeout('hiddeAndShow()', 4000);
