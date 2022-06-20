@@ -2,37 +2,54 @@ document.addEventListener('DOMContentLoaded', async () => {
   await web();
 });
 
-let currentPag = 1;
+let current_page = 1;
 let shoesPerPage = 12;
 let Allcategories = [];
 let search = '';
 
 // to dispaly every pag 10 item
-function nextPage() {
-  currentPag = currentPag + 1;
-
-  web();
-}
-
-// to back to previos page
 function prevPage() {
-  currentPag = currentPag - 1;
+  if (current_page > 1) {
+    current_page--;
+    changePage(current_page);
+  }
+}
 
+function nextPage() {
+  if (current_page < numPages()) {
+    current_page++;
+    changePage(current_page);
+  }
+}
+
+function changePage(page) {
+  var btn_next = document.getElementById('next');
+  var btn_prev = document.getElementById('prev');
+  var page_span = document.getElementById('page');
+
+  // Validate page
+  if (page < 1) page = 1;
+  if (page > numPages()) page = numPages();
+
+  for (var i = (page - 1) * shoesPerPage; i < page * shoesPerPage; i++)
+    page_span.innerHTML = page + '/' + numPages();
+
+  if (page == 1) {
+    btn_prev.style.visibility = 'hidden';
+  } else {
+    btn_prev.style.visibility = 'visible';
+  }
+
+  if (page == numPages()) {
+    btn_next.style.visibility = 'hidden';
+  } else {
+    btn_next.style.visibility = 'visible';
+  }
   web();
 }
 
-// shoes per page
-
-function shoesPage() {
-  shoesPerPage = 12;
-  web();
-}
-
-function shoes() {
-  pageNumberFromInput = input.value;
-  currentPag = pageNumberFromInput;
-
-  web();
+function numPages() {
+  return Math.ceil(shoesPerPage);
 }
 
 // search by value
@@ -66,7 +83,7 @@ async function web() {
     },
     body: JSON.stringify({
       pageSize: shoesPerPage,
-      pageNumber: currentPag,
+      pageNumber: current_page,
       categories: Allcategories,
       search: search,
     }),

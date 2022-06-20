@@ -121,6 +121,7 @@ async function showDetails() {
     sliderSix.innerText = data.images[6];
   }
 
+  // show details of the shoe and slide left right
   function selectedImg(image) {
     document.getElementById('pictuer').src = image;
 
@@ -139,4 +140,4 @@ async function showDetails() {
 function hiddeShow() {
   document.getElementById('slider-wrapper').style.visibility = 'visible';
 }
-setTimeout('hiddeShow()', 2000);
+setTimeout('hiddeShow()', 3000);
