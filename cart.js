@@ -37,7 +37,10 @@ function addCartItemsToDom(items){
         mainRow.appendChild(frow);
         mainRow.classList.add('mainrow');
         frow.classList.add('frow');
-    
+        
+        let img = new Image();
+        img.src = items[i].imageUrl;
+        frow.appendChild(img);
 
         let brnShoe = document.createElement('h2');
         frow.appendChild(brnShoe);
@@ -48,6 +51,7 @@ function addCartItemsToDom(items){
         let rebtn = document.createElement('button')
         frow.appendChild(rebtn);
         rebtn.innerText = 'Remove';
+        rebtn.classList.add('rebtn');
 
 
         let select = document.createElement('select');
