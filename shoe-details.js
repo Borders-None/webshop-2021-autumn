@@ -34,11 +34,6 @@ async function showDetails() {
     box.appendChild(pric);
     pric.innerText = '$' + data.price;
 
-    var matria = document.createElement('p');
-    matria.classList.add('second');
-    box.appendChild(matria);
-    matria.innerText = data.features;
-
     var add = document.createElement('button');
     box.appendChild(add);
     add.classList.add('buttn');

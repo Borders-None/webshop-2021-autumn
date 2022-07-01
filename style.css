@@ -8,7 +8,6 @@
 }
 body {
   background-color: whitesmoke;
-  padding: 1rem;
 }
 /* start of the header */
 #header {
@@ -513,7 +512,7 @@ ul li:hover::after {
   align-items: center;
   text-align: left;
   max-width: 500px;
-  max-height: 300px;
+  height: auto;
   margin-bottom: 20px;
   color: black;
   background-color: #fff;
@@ -567,27 +566,102 @@ ul li:hover::after {
   transform: scale(1.1);
 }
 
+@media screen and (min-width: 320px) and (max-width: 761px) {
+  #shoesbox {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .content {
+    padding: 1rem;
+  }
+  #titel {
+    font-size: 12px;
+  }
+  .frow {
+    flex-direction: column;
+    margin: 2rem;
+  }
+  .contact-items {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+  .contact-items h4 {
+    margin-bottom: 15px;
+  }
+}
+
 #cartbox {
-  display: grid;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  padding-top: 20%;
+  max-width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+
+  padding: 3rem;
 }
 
-#cart- {
-  display: grid;
+.frow {
+  max-width: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+  border-bottom: 1px solid black;
+}
+.cart-image {
+  max-width: 150px;
 }
 
+.brnshoe {
+  font-size: 15px;
+}
+
+.rebtn {
+  border: 0;
+  padding: 10px 20px;
+  background-color: burlywood;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 1s;
+}
+.rebtn:hover {
+  transform: scale(1.1);
+}
 #cartbox1 {
-  display: flex;
+  text-align: right;
 }
 
-.frow{
-  display: grid;
+footer {
+  max-width: 100%;
+
+  color: black;
+  padding: 2rem;
+  border-top: 2px solid black;
+}
+.contact-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contact-items h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #222;
+  border-bottom: 2px solid burlywood;
+}
+#contact h4 {
+  margin-bottom: 10px;
+}
+#contact i {
+  margin-left: 15px;
 }
 
-.brnshoe{
-  display: flex;
-  flex-direction: row;
+#about-us {
+  font-size: 1rem;
+  max-width: 300px;
 }
