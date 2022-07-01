@@ -52,6 +52,9 @@ async function showDetails() {
     sliderDiv = new Image();
     sliderDiv.src = data.images[0];
     sliderDiv.classList.add('sliderImg');
+    sliderDiv.addEventListener('click', () => {
+      selectedImg(data.images[0]);
+    });
     slider.appendChild(sliderDiv);
     sliderDiv.innerText = data.images[0];
 
