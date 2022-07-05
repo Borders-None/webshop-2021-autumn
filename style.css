@@ -116,31 +116,39 @@ ul li:hover::after {
   margin: 0;
   margin-right: 20px;
 }
-.dropdown {
+#dropdown {
   display: none;
   position: absolute;
   background-color: #856245;
-  min-width: 160px;
+  color: black;
+  max-width: 100%;
+  max-height: 500px;
+  padding: 1rem;
+  font-size: 20px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  overflow: hidden;
 }
 
-.dropdown a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+#dropdown div {
+  cursor: pointer;
 }
-.dropdown a:hover {
-  background-color: #fff;
-  color: black;
+#dropdown div:hover {
+  background: burlywood;
+  color: #fff;
 }
 
-.dropbtn:hover .dropdown {
+.dropbtn:hover #dropdown {
   display: block;
   height: fit-content;
+  overflow-y: scroll;
+}
+.dropbtn:hover #dropdown::-webkit-scrollbar {
+  width: 8px;
+  background: #222;
+}
+.dropbtn:hover #dropdown::-webkit-scrollbar-thumb {
+  background: #fff;
 }
 
 /* end of the header */
@@ -271,7 +279,6 @@ ul li:hover::after {
   align-items: center;
   text-align: center;
   margin-top: 150px;
-
   border: 2px solid sienna;
 }
 
@@ -590,6 +597,9 @@ ul li:hover::after {
   .contact-items h4 {
     margin-bottom: 15px;
   }
+  .rebtn {
+    margin: 30px 30px;
+  }
 }
 
 #cartbox {
@@ -598,7 +608,6 @@ ul li:hover::after {
   display: flex;
   flex-direction: column;
   margin-top: 100px;
-
   padding: 3rem;
 }
 

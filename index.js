@@ -113,7 +113,7 @@ async function web() {
 
     function showGategorie() {
       const gate = document.getElementById('dropdown');
-      const getGate = document.createElement('a');
+      const getGate = document.createElement('div');
       getGate.id = categorey.name;
       gate.appendChild(getGate);
       getGate.innerText = category.name;
@@ -123,7 +123,7 @@ async function web() {
   const data = await response.json();
   wait.removeChild(letterWait);
   console.log(data);
-  products=data;
+  products = data;
   getShoes(data);
 }
 
@@ -149,13 +149,13 @@ function getElementId(shoes) {
   click.innerText = 'Add To Cart';
   click.classList.add('buttn');
   click.setAttribute('id', 'shoes' + shoes.id);
-  click.addEventListener('click' , function(){
+  click.addEventListener('click', function () {
     cart.push(shoes.id);
-    localStorage.setItem('userCart' , JSON.stringify(cart));
+    localStorage.setItem('userCart', JSON.stringify(cart));
     let items = JSON.parse(localStorage.getItem('userCart'));
     let num = document.getElementById('cart-btn');
     num.innerText = items.length;
-    click.setAttribute('disabled' , 'disabled');
+    click.setAttribute('disabled', 'disabled');
     getCartItems();
   });
   click.setAttribute('id', 'shoes');
@@ -232,5 +232,5 @@ function hiddeAndShow() {
 }
 setTimeout('hiddeShow()', 4000);
 
-// add to cart 
+// add to cart
 setTimeout('hiddeAndShow()', 4000);
