@@ -17,7 +17,7 @@ async function showDetails() {
       console.log(data);
       showShoeDetails(data);
     });
-  let cart = [];  
+  let cart = [];
   function showShoeDetails(data) {
     var box = document.getElementById('titel');
     var brand = document.createElement('h1');
@@ -41,14 +41,14 @@ async function showDetails() {
     add.innerText = 'Add To Cart';
     add.setAttribute('id', 'shoes' + data.id);
     add.addEventListener('click', function () {
-    cart.push(data.id);
-    localStorage.setItem('userCart', JSON.stringify(cart));
-    let items = JSON.parse(localStorage.getItem('userCart'));
-    let num = document.getElementById('cart-btn');
-    num.innerText = items.length;
-    add.setAttribute('disabled', 'disabled');
-    getCartItems();
-  });
+      cart.push(data.id);
+      localStorage.setItem('userCart', JSON.stringify(cart));
+      let items = JSON.parse(localStorage.getItem('userCart'));
+      let num = document.getElementById('cart-btn');
+      num.innerText = items.length;
+      add.setAttribute('disabled', 'disabled');
+      getCartItems();
+    });
 
     var boxs = document.getElementById('shoebox');
     var image = document.createElement('div');
